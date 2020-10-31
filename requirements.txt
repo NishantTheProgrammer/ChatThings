@@ -1,0 +1,42 @@
+Features:
+   chat:
+       text
+       emoji
+       custom emoji (_futureUpdates_)
+       hyperlink
+       live remote video(YouTube, Facebook etc)
+       document
+       location
+       audio:
+           recording
+           upload
+       video:
+           recording
+           upload
+       streaming:
+           sameMusicOnBothEnd
+       chatSharing(select msg and share to other friend)
+    
+    newsfeed:
+        post:
+            text
+            img
+            video
+        comment:
+            reply
+    friends:
+         request-response
+         metual
+         suggestion/find by critarea (name, sex, age, location)
+         tag-mention
+    games:
+        tic-tac-toe
+        custom KBC
+
+    registration/login with:
+        google
+        facebook
+        GitHub
+
+         
+  
