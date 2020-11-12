@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&display=swap");
 *,
 *::before,
 *::after {
@@ -22,24 +23,28 @@ body {
 
 :root {
   --blue: rgb(22, 93, 115);
-  --white: #e6e6e6;
+  --white: #f7f7f7;
   --orange: rgb(227, 149, 40);
   --skyblue: rgb(136, 199, 217);
   --purple: rgb(123, 44, 170);
+  --purple-2: #441e59;
   --gerau: #b92c2c;
-  --clipping-bgcolor: red;
+  --pink: #f56784;
+  --choco: #694817;
+  --black: black;
 }
 
 .login-container {
   height: 50rem;
   width: 35rem;
   background-color: var(--orange);
-  border-radius: .5rem;
+  border-radius: 3rem;
   position: absolute;
   right: 20rem;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  overflow: hidden;
 }
 
 .login-container__cliping {
@@ -51,6 +56,28 @@ body {
           clip-path: circle(50% at 100% 0%);
   -webkit-transition: all 1s;
   transition: all 1s;
+}
+
+.login-container__change {
+  background-color: var(--choco);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  -webkit-clip-path: circle(15% at 87% -1%);
+          clip-path: circle(15% at 87% -1%);
+  text-align: right;
+  font-size: 2rem;
+  -webkit-transition: .4s ease-in;
+  transition: .4s ease-in;
+  padding: 1rem;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.login-container__change:hover {
+  -webkit-clip-path: circle(20% at 87% -1%);
+          clip-path: circle(20% at 87% -1%);
+  padding: 2rem;
 }
 
 .login-container__login-form {
@@ -108,5 +135,77 @@ body {
 
 .login-container__login-form input[type="submit"]:hover {
   background-color: var(--blue);
+}
+
+.wave-top {
+  width: 70%;
+}
+
+.wave-bottom {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.main-container {
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: var(--white);
+}
+
+.main-container h1 {
+  font-size: 6rem;
+}
+
+.main-container h2 {
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+.main-container__chat-msg {
+  background-color: var(--pink);
+  color: var(--white);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 2rem;
+  margin: 5rem auto;
+  padding: 1rem 2rem;
+  border: .3rem solid #4f080e;
+  position: relative;
+  border-radius: 1.5rem;
+  font-family: 'Pacifico', cursive;
+}
+
+.main-container__chat-msg--bottom-triangle {
+  background-color: black;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--pink);
+  border: .3rem solid #4f080e;
+  -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
+          clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.girl-svg {
+  position: absolute;
+  width: 35rem;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  left: 5rem;
+  bottom: 5rem;
+}
+
+.invisible-color {
+  color: rgba(0, 0, 0, 0) !important;
 }
 /*# sourceMappingURL=login.css.map */
