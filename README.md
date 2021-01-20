@@ -1,6 +1,26 @@
 It will be live soon on 
 [chatthings.nishanttheprogrammer.com](chatthings.nishanttheprogrammer.com)
 
+# Installation Instructions
+```sh
+git clone https://github.com/NishantTheProgrammer/ChatThings.git
+```
+```sh
+cd ChatThings/frontend
+npm install     #node and npm should be installed.
+npm run build
+```
+```sh
+# create a virtual environment  https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
+cd ../backend
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+python manage.py runserver
+```
+
+Now open [http://127.0.0.1:8000/](http://127.0.0.1:8000/) in your browser.
+
 # Features
 
 Foobar is a Python library for dealing with word pluralization.
