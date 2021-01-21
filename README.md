@@ -23,7 +23,6 @@ Now open [http://127.0.0.1:8000/](http://127.0.0.1:8000/) in your browser.
 
 # Features
 
-Foobar is a Python library for dealing with word pluralization.
 
 ## Chat (Individual + Group)
        Text

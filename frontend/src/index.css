@@ -1,13 +1,41 @@
-body {
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+*,
+*::before,
+*::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  font-style: inherit;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: var(--blue);
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --blue: rgb(22, 93, 115);
+  --white: #f7f7f7;
+  --orange: rgb(227, 149, 40);
+  --skyblue: rgb(136, 199, 217);
+  --purple: rgb(123, 44, 170);
+  --purple-2: #441e59;
+  --gerau: #b92c2c;
+  --pink: #f56784;
+  --choco: #694817;
+  --black: black;
+}
+
+.invisible_color {
+  color: rgba(0, 0, 0, 0) !important;
 }

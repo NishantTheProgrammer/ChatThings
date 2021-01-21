@@ -1,0 +1,190 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+.wave_top {
+  width: 70%;
+  @media screen and (max-width: 834px) {
+    display: none;
+  }
+}
+
+.container {
+  height: 50rem;
+  width: 35rem;
+  background-color: var(--orange);
+  border-radius: 3rem;
+  position: absolute;
+  right: 20rem;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+  transition: 0.5s ease;
+
+  @media screen and (max-width: 1366px) {
+    right: 5rem;
+  }
+  @media screen and (max-width: 834px) {
+    top: 98%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+  .cliping {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: var(--clipping-bgcolor);
+    clip-path: circle(50% at 100% 0%);
+    transition: all 1s;
+  }
+
+  .form {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    font-family: "Poppins", sans-serif;
+
+    input {
+      font-size: 1.6rem;
+      padding: 0.8rem 2rem;
+      margin: 1rem;
+      width: 28rem;
+      outline: none;
+      border: none;
+      border-radius: 0.5rem;
+      transition: all 0.4s;
+      font-family: "Poppins", sans-serif;
+      &:focus {
+        width: 30rem;
+      }
+    }
+    input[type="submit"] {
+      font-size: 2rem;
+      padding: 1rem;
+      width: 10rem;
+      border: none;
+      border-radius: 1rem;
+      background-color: var(--gerau);
+      color: var(--white);
+      font-family: "Poppins", sans-serif;
+      outline: none;
+      transition: 1s all ease;
+      cursor: pointer;
+      &:hover {
+        background-color: var(--blue);
+      }
+    }
+  }
+
+  .btn_change {
+    background-color: var(--choco);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    clip-path: circle(15% at 87% -1%);
+    text-align: right;
+    font-size: 2rem;
+    transition: 0.4s ease-in;
+    padding: 1rem;
+    color: var(--white);
+    cursor: pointer;
+    &:hover {
+      clip-path: circle(20% at 87% -1%);
+      padding: 2rem;
+    }
+  }
+}
+
+.body {
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--white);
+  transition: 0.5s ease;
+
+  @media screen and (max-width: 1366px) {
+    left: 5rem;
+  }
+  @media screen and (max-width: 834px) {
+    left: 50%;
+    top: 5rem;
+    transform: translateX(-50%);
+  }
+
+  h1 {
+    font-size: 6rem;
+    font-family: 'Poppins', sans-serif;
+    @media screen and (max-width: 834px) {
+      font-size: 4rem;
+    }
+  }
+  h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    @media screen and (max-width: 834px) {
+      font-size: 1.8rem;
+    }
+  }
+  .chat_msg {
+    background-color: var(--pink);
+    color: var(--white);
+    width: fit-content;
+    font-size: 2rem;
+    margin: 5rem auto;
+    padding: 1rem 2rem;
+    border: 0.3rem solid #4f080e;
+    position: relative;
+    border-radius: 1.5rem;
+    font-family: "Pacifico", cursive;
+
+    @media screen and (max-width: 834px) {
+      display: none;
+    }
+
+    &:after {
+      content: "";
+      background-color: black;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      height: 2rem;
+      width: 2rem;
+      background-color: var(--pink);
+      border: 0.3rem solid #4f080e;
+      clip-path: polygon(100% 0, 0 100%, 100% 100%);
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+}
+
+.girl_svg {
+  position: absolute;
+  width: 35rem;
+  transform: rotateY(180deg);
+  left: 5rem;
+  bottom: 5rem;
+  transition: 0.5s ease;
+  @media screen and (max-width: 1366px) {
+    width: 20rem;
+    bottom: 2rem;
+  }
+  @media screen and (max-width: 834px) {
+    display: none;
+  }
+}
+
+.wave_bottom {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  @media screen and (max-width: 834px) {
+    display: none;
+  }
+}
