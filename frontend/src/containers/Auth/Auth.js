@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import axios from '../../axios'
+
 import classes from "./Auth.module.scss";
 import waveTopSVG from "./waveTop.svg";
 import waveBottomSVG from "./waveBottom.svg";
@@ -9,6 +11,11 @@ const Auth = (props) => {
   const [formType, setFormType] = useState("Log In");
   const [clipath, setClippath] = useState();
   const [clipathColor, setClippathColor] = useState();
+  
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+
+
 
   useEffect(() => {
     setInterval(() => {
@@ -31,22 +38,51 @@ const Auth = (props) => {
       event.target.style.clipPath = cl;
     }, 1000);
   };
+  const loginRequest = (event) => {
+    event.preventDefault();
+    
+    axios.post('login/', {
+      'username': username,
+      'password': password
+    })
+    .then(res => {
+      console.log(res.data)
+
+    },
+    err => {
+      console.log('error is: ' + err);
+    })
+    .catch(err => console.log(err.response.data))
+
+  }
 
   const loginForm = (
-    <form className={classes.form} action="#">
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
+    <form className={classes.form} onSubmit={loginRequest}>
+      <input 
+        type="text" 
+        placeholder="Username" 
+        value={username}
+        onChange={e => setUsername(e.target.value)}
+        />
+      <input 
+        type="password" 
+        placeholder="Password" 
+        value={password}
+        onChange={e => setPassword(e.target.value)}
+        />
       <input type="submit" id="submitbtn" value={formType} />
     </form>
   );
   const signUpForm = (
     <form className={classes.form} action="#">
       <input type="text" placeholder="Name" />
-      <input type="email" placeholder="Email" />
+      <input type="text" placeholder="Username" />
       <input type="password" placeholder="Password" />
       <input type="submit" id="submitbtn" value={formType} />
     </form>
   );
+
+
 
   return (
     <>
