@@ -79,6 +79,9 @@
         background-color: var(--blue);
       }
     }
+    .error {
+      background-color: #ffaeae;
+    }
   }
 
   .btn_change {
@@ -188,3 +191,5 @@
     display: none;
   }
 }
+
+

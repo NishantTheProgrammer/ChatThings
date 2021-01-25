@@ -1,20 +1,17 @@
 import { useState, useEffect } from "react";
 
-import axios from '../../axios'
 
 import classes from "./Auth.module.scss";
 import waveTopSVG from "./waveTop.svg";
 import waveBottomSVG from "./waveBottom.svg";
 import girlSVG from "./girl.svg";
+import LoginFrom from "./LoginFrom";
+import SignUpFrom from "./SignUpFrom";
 
 const Auth = (props) => {
   const [formType, setFormType] = useState("Log In");
   const [clipath, setClippath] = useState();
   const [clipathColor, setClippathColor] = useState();
-  
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
-
 
 
   useEffect(() => {
@@ -38,49 +35,7 @@ const Auth = (props) => {
       event.target.style.clipPath = cl;
     }, 1000);
   };
-  const loginRequest = (event) => {
-    event.preventDefault();
-    
-    axios.post('login/', {
-      'username': username,
-      'password': password
-    })
-    .then(res => {
-      console.log(res.data)
 
-    },
-    err => {
-      console.log('error is: ' + err);
-    })
-    .catch(err => console.log(err.response.data))
-
-  }
-
-  const loginForm = (
-    <form className={classes.form} onSubmit={loginRequest}>
-      <input 
-        type="text" 
-        placeholder="Username" 
-        value={username}
-        onChange={e => setUsername(e.target.value)}
-        />
-      <input 
-        type="password" 
-        placeholder="Password" 
-        value={password}
-        onChange={e => setPassword(e.target.value)}
-        />
-      <input type="submit" id="submitbtn" value={formType} />
-    </form>
-  );
-  const signUpForm = (
-    <form className={classes.form} action="#">
-      <input type="text" placeholder="Name" />
-      <input type="text" placeholder="Username" />
-      <input type="password" placeholder="Password" />
-      <input type="submit" id="submitbtn" value={formType} />
-    </form>
-  );
 
 
 
@@ -101,7 +56,7 @@ const Auth = (props) => {
             backgroundColor: clipathColor,
           }}
         />
-        {formType === "Log In" ? loginForm : signUpForm}
+        {formType === "Log In" ? <LoginFrom /> : <SignUpFrom />}
         <div
           className={classes.btn_change}
           style={{
