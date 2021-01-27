@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    background-color: #0f0f49;
+    color: white;
+    padding: 1rem;
+    
+    * {
+        flex-grow: 1;
+    }
+
+    .logo a {
+        color: white;
+        text-decoration: none;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        
+        li {
+            font-size: 1.6rem;
+            list-style: none;
+            transition: all .3s;
+            cursor: pointer;
+
+            span {
+                @media screen and (max-width: 800px) {
+                    display: none;
+                    font-size: 2rem;
+                }
+            }
+
+            &:hover {
+                color: rgb(231, 231, 96);
+            }
+        }
+    }
+
+    .profile {
+        text-align: right;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        img {
+            margin-left: 2rem;
+            height: 2rem;
+            flex-grow: 0;
+        }
+    }
+}

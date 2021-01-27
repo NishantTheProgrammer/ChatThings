@@ -3,7 +3,7 @@ import { useState } from "react";
 import { form as formClass, error as errorClass } from "./Auth.module.scss";
 import axios from "../../axios";
 
-const SignUpFrom = () => {
+const SignUpFrom = (props) => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -16,28 +16,31 @@ const SignUpFrom = () => {
     event.preventDefault();
 
     axios
-      .post("account/register/", {
-        username,
-        email,
-        first_name: firstName,
-        last_name: lastName,
-        password,
-        password2: password,
-      })
+      .post(
+        "account/register/",
+        {
+          username,
+          email,
+          first_name: firstName,
+          last_name: lastName,
+          password,
+          password2: password,
+        }
+      )
       .then((res) => {
         console.log(res.data);
+        props.history.push("/login");
       })
       .catch((err) => {
-        
-        if(err.response.data.email) setEmail('');
-        if(err.response.data.username) setUsername('');
-        if(err.response.data.first_name) setFirstName('');
-        if(err.response.data.last_name) setLastName('');
-        if(err.response.data.password) setPassword('');
+        if (err.response?.data.email) setEmail("");
+        if (err.response?.data.username) setUsername("");
+        if (err.response?.data.first_name) setFirstName("");
+        if (err.response?.data.last_name) setLastName("");
+        if (err.response?.data.password) setPassword("");
 
-        setErrors(err.response.data);
-        
-        console.log(err.response.data);
+        setErrors(err.response?.data);
+
+        console.log(err.response?.data);
       });
   };
 
@@ -62,7 +65,9 @@ const SignUpFrom = () => {
       <input
         className={errors.first_name && errorClass}
         type="text"
-        placeholder={(errors.first_name && errors.first_name[0]) || "First Name"}
+        placeholder={
+          (errors.first_name && errors.first_name[0]) || "First Name"
+        }
         title={(errors.first_name && errors.first_name[0]) || "First Name"}
         value={firstName}
         onChange={(e) => setFirstName(e.target.value)}

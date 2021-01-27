@@ -19,7 +19,6 @@ html {
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: var(--blue);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -34,6 +33,10 @@ body {
   --pink: #f56784;
   --choco: #694817;
   --black: black;
+
+
+
+  --container: 100rem;
 }
 
 .invisible_color {

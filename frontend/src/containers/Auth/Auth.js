@@ -7,23 +7,28 @@ import SignUpFrom from "./SignUpFrom";
 import { Route } from "react-router-dom";
 
 import backgroundImage from "./background.jpg";
+import Logout from "./Logout";
 
 const Auth = (props) => {
   const [clipath, setClippath] = useState();
   const [clipathColor, setClippathColor] = useState('#7b2caa');
 
   useEffect(() => {
-    setInterval(() => {
+    const clipathInterval = setInterval(() => {
       const x = Math.floor(Math.random() * 101);
       const y = Math.floor(Math.random() * 101);
       const radius = Math.floor(Math.random() * 101) / 2;
       setClippath(`circle(${radius}% at ${x}% ${y}%)`);
     }, 1000);
-    setInterval(() => {
+    const randomColorInterval = setInterval(() => {
       const randomColor = "#" + (((1 << 24) * Math.random()) | 0).toString(16);
       setClippathColor(randomColor);
-
     }, 3000)
+
+    return () => {
+      clearInterval(clipathInterval);
+      clearInterval(randomColorInterval);
+    }
   }, []);
 
   const formChangeHandler = (event) => {
@@ -39,10 +44,12 @@ const Auth = (props) => {
   };
 
   return (
+    
     <div
       className={classes.auth}
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
+      <Route path="/logout" component={Logout} />
       <svg
         className={classes.wave_top}
         xmlns="http://www.w3.org/2000/svg"

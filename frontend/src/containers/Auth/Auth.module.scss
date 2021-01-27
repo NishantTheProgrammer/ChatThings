@@ -179,7 +179,7 @@
 
 .girl_svg {
   position: absolute;
-  width: 35rem;
+  width: 40rem;
   transform: rotateY(180deg);
   left: 5rem;
   bottom: 0;
@@ -187,7 +187,6 @@
   z-index: 3;
   @media screen and (max-width: 1366px) {
     width: 20rem;
-    bottom: 2rem;
   }
   @media screen and (max-width: 834px) {
     display: none;
