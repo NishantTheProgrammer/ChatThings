@@ -1,11 +1,20 @@
 ::-webkit-scrollbar {
   display: none;
 }
-
+.auth {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
 .wave_top {
   width: 70%;
+  top: 0;
   @media screen and (max-width: 834px) {
     display: none;
+  }
+  path {
+    opacity: 0.3;
+    transition: all 3s;
   }
 }
 
@@ -34,8 +43,8 @@
     width: 100%;
     position: absolute;
     background-color: var(--clipping-bgcolor);
-    clip-path: circle(50% at 100% 0%);
-    transition: all 1s;
+    clip-path: circle(10% at 100% 0%);
+    transition: clip-path 1s, background-color 3s;
   }
 
   .form {
@@ -110,7 +119,7 @@
   transform: translateY(-50%);
   color: var(--white);
   transition: 0.5s ease;
-
+  
   @media screen and (max-width: 1366px) {
     left: 5rem;
   }
@@ -119,8 +128,9 @@
     top: 5rem;
     transform: translateX(-50%);
   }
-
+  
   h1 {
+    text-shadow: 0 0 1rem black;
     font-size: 6rem;
     font-family: 'Poppins', sans-serif;
     @media screen and (max-width: 834px) {
@@ -128,6 +138,7 @@
     }
   }
   h2 {
+    text-shadow: 0 0 .6rem black;
     font-size: 2.8rem;
     text-align: center;
     @media screen and (max-width: 834px) {
@@ -171,8 +182,9 @@
   width: 35rem;
   transform: rotateY(180deg);
   left: 5rem;
-  bottom: 5rem;
+  bottom: 0;
   transition: 0.5s ease;
+  z-index: 3;
   @media screen and (max-width: 1366px) {
     width: 20rem;
     bottom: 2rem;
@@ -189,6 +201,10 @@
   bottom: 0;
   @media screen and (max-width: 834px) {
     display: none;
+  }
+  path {
+    opacity: 0.5;
+    transition: all 3s;
   }
 }
 
