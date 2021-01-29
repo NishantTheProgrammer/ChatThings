@@ -1,0 +1,16 @@
+.container {
+    width: 95%;
+    max-width: var(--container);
+
+    padding: 2rem;
+    margin: 2rem auto;
+    background-color: rgb(119, 151, 58);
+    border-radius: .5rem;
+
+    img {
+        width: 100%;
+    }
+    video {
+        width: 100%;
+    }
+}

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComment, faGamepad, faHistory, faNewspaper, faUserFriends } from '@fortawesome/free-solid-svg-icons'
 
 
-import Logout from '../../containers/Auth/Logout';
+import logout from '../../containers/Auth/logout';
 import classes from './NavBar.module.scss';
 import userFallbackImage from './userFallback.png';
 
@@ -13,7 +13,9 @@ const NavBar = props => {
     try {
         user = jwtDecode(localStorage.getItem('access_token'));
     }
-    catch { return <Logout />; }
+    catch { 
+        return logout();     
+    }
 
     return (
         <nav className={classes.container}>

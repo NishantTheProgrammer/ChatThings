@@ -3,10 +3,12 @@ import { Route, Switch } from 'react-router-dom';
 import Auth from './containers/Auth/Auth';
 import Home from './containers/Home/Home';
 
+import classes from './App.module.css'
+
 
 function App() {
   return (
-    <div className="App">
+    <div className={classes.app}>
 
       <Switch>
         <Route path="/" exact component={Home} />

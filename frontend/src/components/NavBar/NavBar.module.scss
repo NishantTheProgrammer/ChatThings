@@ -6,6 +6,10 @@
     background-color: #0f0f49;
     color: white;
     padding: 1rem;
+    width: 100%;
+    z-index: 99;
+    position: sticky;
+    top: 0;
     
     * {
         flex-grow: 1;

@@ -1,6 +1,6 @@
 import axios from "../../axios";
 
-const Logout = () => {
+const logout = () => {
     axios.post('account/logout/', {
         "refresh_token": localStorage.getItem("refresh_token")
     }).then(() => {
@@ -11,4 +11,4 @@ const Logout = () => {
     }).catch(err => console.log(err));
     return null;
 }
-export default Logout;
+export default logout;

@@ -17,7 +17,7 @@ source env/bin/activate
 pip install -r requirements.txt
 python manage.py runserver
 ```
-If you've any issue regarding [click](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
+If you've any issue regarding venv click [here](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 
 Now open [http://127.0.0.1:8000/](http://127.0.0.1:8000/) in your browser.
 
@@ -68,11 +68,6 @@ Now open [http://127.0.0.1:8000/](http://127.0.0.1:8000/) in your browser.
         Tic-tac-toe
         Custom KBC
 ## Authentication
-        ID + Password
+        Username + Password ✔
         Google
         Facebook
-
-# Entities
-- Users
-- Moderators
-- Admin

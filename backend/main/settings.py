@@ -47,10 +47,15 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_simplejwt.token_blacklist',
-    'frontend',
-    'account',
     'corsheaders',
 
+
+    'frontend',
+    'account',
+    'news',
+
+
+    'django_cleanup',
 ]
 
 REST_FRAMEWORK = {
@@ -58,7 +63,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-    'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),  # 
 }
 SIMPLE_JWT = {
@@ -159,6 +164,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, '../frontend/build/static'),
 ]
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

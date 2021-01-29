@@ -8,7 +8,7 @@ const LoginFrom = (props) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState();
 
-  const submitHandler = (event) => {
+  const getAuthToken = (event) => {
     event.preventDefault();
     axios
       .post("account/token/obtain/", {
@@ -27,7 +27,7 @@ const LoginFrom = (props) => {
   };
 
   return (
-    <form className={formClass} onSubmit={submitHandler}>
+    <form className={formClass} onSubmit={getAuthToken}>
       {error && (
         <input
           style={{ fontSize: "1.1rem" }}

@@ -12,7 +12,7 @@ const SignUpFrom = (props) => {
 
   const [errors, setErrors] = useState({});
 
-  const submitHandler = (event) => {
+  const createNewUser = (event) => {
     event.preventDefault();
 
     axios
@@ -45,7 +45,7 @@ const SignUpFrom = (props) => {
   };
 
   return (
-    <form className={formClass} onSubmit={submitHandler}>
+    <form className={formClass} onSubmit={createNewUser}>
       <input
         className={errors.email && errorClass}
         type="email"
