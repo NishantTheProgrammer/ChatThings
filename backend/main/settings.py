@@ -37,6 +37,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://127.0.0.1:3000'
 ]
 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -94,6 +95,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+AUTH_USER_MODEL = 'account.User'
 
 ROOT_URLCONF = 'main.urls'
 

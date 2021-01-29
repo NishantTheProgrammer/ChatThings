@@ -46,9 +46,10 @@ Now open [http://127.0.0.1:8000/](http://127.0.0.1:8000/) in your browser.
        Report: fake identity, pornographic content
 ## News feed
         Post:
-            Text
-            Image
-            Video
+            Text ✅
+            Image ✅
+            Video ✅
+            Audio ✅
             Report
         Comment:
             Reply
@@ -68,6 +69,6 @@ Now open [http://127.0.0.1:8000/](http://127.0.0.1:8000/) in your browser.
         Tic-tac-toe
         Custom KBC
 ## Authentication
-        Username + Password ✔
+        Username + Password ✅
         Google
         Facebook

@@ -17,11 +17,12 @@ from rest_framework_simplejwt import views as jwt_views
 
 from .views import RegisterView
 
-from .views import ObtainTokenPairWithView, LogoutAndBlacklistRefreshTokenForUserView
+from .views import ObtainTokenPairWithView, LogoutAndBlacklistRefreshTokenForUserView, AuthUserView
 
 urlpatterns = [
     path('token/obtain/', ObtainTokenPairWithView.as_view(), name='token_create'),  # override sjwt stock token
     path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('register/', RegisterView.as_view()),
-    path('logout/', LogoutAndBlacklistRefreshTokenForUserView.as_view(), name='blacklist')
+    path('logout/', LogoutAndBlacklistRefreshTokenForUserView.as_view(), name='blacklist'),
+    path('user/', AuthUserView.as_view(), name='active_user')
 ]

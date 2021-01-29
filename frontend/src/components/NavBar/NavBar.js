@@ -7,15 +7,28 @@ import { faComment, faGamepad, faHistory, faNewspaper, faUserFriends } from '@fo
 import logout from '../../containers/Auth/logout';
 import classes from './NavBar.module.scss';
 import userFallbackImage from './userFallback.png';
+import { useEffect, useState } from 'react';
+import axios from '../../axios';
 
 const NavBar = props => {
-    let user;
-    try {
-        user = jwtDecode(localStorage.getItem('access_token'));
-    }
-    catch { 
-        return logout();     
-    }
+    const [user, setUser] = useState({});
+    
+    
+    
+    useEffect(() => {
+        
+        axios.get('account/user/')
+        .then(res => {
+            if(res.status === 200){
+                setUser(res.data);
+            } else {
+                logout();
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }, [])
 
     return (
         <nav className={classes.container}>
@@ -29,7 +42,7 @@ const NavBar = props => {
             </ul>
             <aside className={classes.profile}>
                 <p>{user.username}</p>
-                <img src={"http://user.img"} alt='user' onError={e => {e.target.src = userFallbackImage}} />
+                <img src={`http://localhost:8000${user.picture}`} alt='user' onError={e => {e.target.src = userFallbackImage}} />
             </aside>
         </nav>
     );
