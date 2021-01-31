@@ -1,16 +1,57 @@
 .container {
-    width: 95%;
-    max-width: var(--container);
+  width: 95%;
+  max-width: var(--container);
 
-    padding: 2rem;
-    margin: 2rem auto;
-    background-color: rgb(119, 151, 58);
-    border-radius: .5rem;
+  padding: 2.5rem;
+  margin: 2rem auto;
+  background-color: var(--container-bg);
+  border-radius: 0.5rem;
 
-    img {
-        width: 100%;
+  .header {
+    display: flex;
+    align-items: center;
+    .info {
+      display: flex;
+      color: white;
+      .authorPicture {
+        width: 5.8rem;
+        flex-grow: 0;
+        border-radius: 3rem;
+        margin-right: 1rem;
+      }
+      a {
+        color: inherit;
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
     }
-    video {
-        width: 100%;
+  }
+  .text {
+    margin: 2rem 0;
+    font-size: 1.6rem;
+    text-align: justify;
+    color: white;
+  }
+
+  img,
+  audio,
+  video {
+    width: 100%;
+    outline: none;
+  }
+  .comments {
+    max-height: 50rem;
+    overflow: scroll;
+    .comment {
+      padding-left: 2rem;
+      border-left: .5rem solid #b100ff;
+      .reply {
+        padding-left: inherit;
+        border-left: .5rem solid red;
+      }
     }
+  }
+
 }

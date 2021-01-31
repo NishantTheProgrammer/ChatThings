@@ -20,6 +20,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  background-color: #191a19;
 }
 
 :root {
@@ -37,6 +38,7 @@ body {
 
 
   --container: 70rem;
+  --container-bg: #2b2d2b;
 }
 
 .invisible_color {

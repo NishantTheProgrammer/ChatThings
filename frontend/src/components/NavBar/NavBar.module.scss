@@ -1,10 +1,9 @@
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, var(--container)) 1fr;
     font-size: 2rem;
     background-color: #0f0f49;
-    color: white;
+    color: rgb(201, 201, 201);
     padding: 1rem;
     width: 100%;
     z-index: 99;
@@ -22,13 +21,27 @@
 
     ul {
         display: flex;
-        justify-content: space-between;
+        align-items:  center;
+        text-align: center;
         
         li {
             font-size: 1.6rem;
             list-style: none;
             transition: all .3s;
+            border-radius: .5rem;
+            height: 100%;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            .active {
+                color: #00f2e2;
+                
+            }
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
 
             span {
                 @media screen and (max-width: 800px) {
@@ -38,7 +51,7 @@
             }
 
             &:hover {
-                color: rgb(231, 231, 96);
+                background-color: rgba(5, 255, 138, 0.315);
             }
         }
     }
@@ -49,10 +62,42 @@
         align-items: center;
         justify-content: flex-end;
 
+        &:hover > a {
+            display: block;
+        }
+
         img {
             margin-left: 2rem;
             height: 2rem;
             flex-grow: 0;
+            border-radius: 1rem;
+        }
+
+        a {
+            display: none;
+        }
+
+        .profile_btn {
+            $color: rgb(201, 201, 201);;
+            color: $color;
+            flex-grow: 0;
+            margin-left: 2rem;
+            text-decoration: none;
+
+            &:hover {
+                color: lighten($color, 10%);
+            }
+        }
+        .logout_btn {
+            $color: rgb(194, 4, 4);
+            color: $color;
+            flex-grow: 0;
+            margin-left: 2rem;
+            text-decoration: none;
+
+            &:hover {
+                color: lighten($color, 10%);
+            }
         }
     }
 }

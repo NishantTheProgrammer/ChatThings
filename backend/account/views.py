@@ -38,11 +38,16 @@ class LogoutAndBlacklistRefreshTokenForUserView(APIView):
 
 
 class AuthUserView(APIView):
-
     def get(self, request):
         queryset = User.objects.all()
         user = request.user
+        serializer = UserSerializer(user)
+        return Response(serializer.data)
 
-        print(user.picture)    
+
+class UserView(APIView):
+    def get(self, request, username):
+        queryset = User.objects.all()
+        user = User.objects.get(username=username)   
         serializer = UserSerializer(user)
         return Response(serializer.data)

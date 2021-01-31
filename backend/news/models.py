@@ -14,6 +14,19 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    # def __str__(self):
-    #     return str(self.id) + "_" + self.author
-    
+
+
+class Comment(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    text = models.CharField(max_length=255)
+    post = models.ForeignKey(Post, related_name='comment', on_delete=models.CASCADE)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+class Reply(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    text = models.CharField(max_length=255)
+    comment = models.ForeignKey(Comment, related_name='reply', on_delete=models.CASCADE)
+
+    created_at = models.DateTimeField(auto_now_add=True)

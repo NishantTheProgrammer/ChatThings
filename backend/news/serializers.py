@@ -3,21 +3,37 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-from .models import Post
+from .models import Post, Comment, Reply
 
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username',]
+        fields = ['id', 'username', 'picture']
+
+
+class ReplySerializer(serializers.ModelSerializer):
+    author = UserSerializer(read_only=True)
+    class Meta:
+        model = Reply
+        fields = ['id', 'text', 'author', 'created_at']
+        extra_kwargs = {'created_at': {'read_only': True}}
+
+
+class CommentSerializer(serializers.ModelSerializer):
+    author = UserSerializer(read_only=True)
+    reply = ReplySerializer(many=True, read_only=True)
+    class Meta:
+        model = Comment
+        fields = ['id', 'text', 'reply', 'author', 'created_at']
+        extra_kwargs = {'created_at': {'read_only': True}}
 
 class PostSerializer(serializers.ModelSerializer):
-
     author = UserSerializer(read_only=True)
-
+    comment = CommentSerializer(many=True, read_only=True)
     class Meta:
         model = Post
-        fields = ('id', 'text', 'media', 'author', 'created_at')
-        extra_kwargs = {'created_by': {'read_only': True}}
+        fields = ('id', 'text', 'media', 'author', 'created_at', 'comment')
+        extra_kwargs = {'created_at': {'read_only': True}}
 
 

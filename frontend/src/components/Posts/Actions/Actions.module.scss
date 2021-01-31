@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    margin: 2rem 0;
+    $bg-color: #3c3c3c;
+    div, form {
+        background-color: $bg-color;
+        flex-basis: 100%;
+        font-size: 2.2rem;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        padding: .5rem;
+        margin:  0 .5rem;
+        border-radius: 2rem;
+
+    }
+    div:hover {
+        background-color: lighten($bg-color, 10%);
+    }
+    form {
+        padding: 0;
+        border-radius: 2rem;
+        overflow: hidden;
+        
+        input {
+            outline: none;
+            border: none;
+            height: 100%;
+            width: 100%;
+            font-size: 1.7rem;
+            color: white;
+            padding-left: 2rem;
+            background-color: inherit;
+        }
+    }
+    .close_btn {
+        $bg-color: #b44f4f;
+        background-color: $bg-color;
+        max-width: 4.3rem;
+        &:hover {
+            background-color: lighten($bg-color, 10%);
+        }
+
+    }
+
+    .react {
+        & > svg {
+            color: rgb(0, 255, 213);
+        }
+    }
+    .comment {
+        & > svg {
+            color: rgb(250, 114, 114);
+        }
+    }
+    .share {
+        & > svg {
+            color: rgb(82, 255, 47);
+        }
+    }
+}

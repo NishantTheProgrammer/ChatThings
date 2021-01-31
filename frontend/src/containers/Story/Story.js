@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
-import Posts from '../../components/Posts/Posts';
-import classes from './Home.module.scss';
+import classes from './Story.module.scss';
 
 const Home = props => {
 
     return (
         <div className={classes.container}>
-            <Posts />
+            <h1>Story</h1>
+            <h1>
+                <Link to="/logout">logout</Link>
+            </h1>
         </div>
     );
 }

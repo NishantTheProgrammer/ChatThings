@@ -24,8 +24,9 @@ const Posts = () => {
         <div className={classes.contininer}>
             <NewPost onPostCreated={fetchPosts}/>
             {
-                postData?.map(post => (
+                postData?.slice(0).reverse().map(post => (
                     <Post 
+                        onPostCreated={fetchPosts}
                         key={post.id} 
                         data={post} 
                 />))

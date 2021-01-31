@@ -28,7 +28,7 @@ class UserSerializer(serializers.ModelSerializer):
             email=validated_data['email'],
             first_name=validated_data['first_name'],
             last_name=validated_data['last_name'],
-            picture=validated_data['picture']
+            picture=validated_data.get('picture')
         )        
         user.set_password(validated_data['password'])
         user.save()
