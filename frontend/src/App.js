@@ -9,6 +9,7 @@ import Games from './containers/Games/Games';
 
 import classes from './App.module.css'
 import NavBar from './components/NavBar/NavBar';
+import Profile from './containers/Profile/Profile';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/story" component={Story} />
         <Route path="/friends" component={Friends} />
         <Route path="/games" component={Games} />
+        <Route path="/users/:username" component={Profile} />
       </Switch>
     </div>
   );

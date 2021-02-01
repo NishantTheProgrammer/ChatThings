@@ -50,6 +50,7 @@ const Post = (props) => {
         endPoint="news/comment/"
         onPostCreated={props.onPostCreated}
         item={{post: props.data.id}}
+        reactions={props.data.reaction}
         setCommentSection={() => setCommentSection((current) => !current)}
       />
       <div className={classes.comments}>

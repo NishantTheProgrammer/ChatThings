@@ -7,6 +7,7 @@ router = DefaultRouter()
 router.register('post', views.PostViewSet)
 router.register('comment', views.CommentViewSet)
 router.register('reply', views.ReplyViewSet)
+router.register('reaction', views.ReactionViewSet)
 
 
 urlpatterns = router.urls

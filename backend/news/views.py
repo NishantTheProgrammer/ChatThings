@@ -46,5 +46,34 @@ class ReplyViewSet(viewsets.ModelViewSet):
         )
         reply.save()
         return response.Response(status=status.HTTP_201_CREATED)
+
     
-    
+class ReactionViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.ReactionSerializer
+    queryset = models.Reaction.objects.all()
+
+    def create(self, request):
+        new_reaction = request.data.get('reaction_type')
+        if(new_reaction not in ['love', 'haha', 'sad', 'angry']):
+            return response.Response(
+                {"error": f"We currently don't support {new_reaction} rection type"}, 
+                status=status.HTTP_406_NOT_ACCEPTABLE
+            )
+
+        post = models.Post.objects.get(id=request.data.get('post'))
+        reaction, created = models.Reaction.objects.get_or_create(
+            user=request.user,
+            post=post
+        )
+
+        if(reaction.reaction_type == new_reaction):
+            reaction.reaction_type = None
+        else:
+            reaction.reaction_type = new_reaction
+        reaction.save()
+
+        if(created):
+            return response.Response(status=status.HTTP_201_CREATED)
+        else:
+            return response.Response(status=status.HTTP_200_OK)
+        

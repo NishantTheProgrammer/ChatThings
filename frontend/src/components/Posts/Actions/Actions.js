@@ -1,5 +1,6 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import jwtDecode from 'jwt-decode'
 import classes from './Actions.module.scss';
 import ActionTypes from './ActionTypes';
 import Reactions from './Reactions';
@@ -9,16 +10,26 @@ import Comment from './Comment';
 const Actions = props => {
     const [actionType, setActionType] = useState();
 
+    const [reaction, setReaction] = useState(null);
+
+    useEffect(() => {
+        const user_id = jwtDecode(localStorage.getItem('access_token')).user_id;
+        setReaction(props.reactions.find(reaction => reaction.user.id === user_id).reaction_type);
+    }, [props.reactions])
+
 
     return (
         <div className={classes.container}>
             { actionType === undefined ? 
                 <ActionTypes 
-                    setCommentSection={props.setCommentSection}
-                    type={props.type} 
+                    reaction={reaction}
                     setActionType={setActionType} 
+                    {...props}
             /> : null}
-            { actionType === 'react' && props.type !== 'reply' &&  <Reactions  setActionType={setActionType}  /> }
+            { actionType === 'react' && props.type !== 'reply' &&  <Reactions  
+                reaction={reaction}
+                setActionType={setActionType} 
+                post_id={props.item.post} {...props} /> }
             { actionType === 'comment' && 
                 <Comment 
                     setActionType={setActionType} 

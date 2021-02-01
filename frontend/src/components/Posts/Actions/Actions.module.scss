@@ -12,7 +12,13 @@
         padding: .5rem;
         margin:  0 .5rem;
         border-radius: 2rem;
+        & > svg {
+            pointer-events: none;
+        }
 
+    }
+    .active_reaction {
+        background-color: lighten($bg-color, 10%);
     }
     div:hover {
         background-color: lighten($bg-color, 10%);
@@ -43,11 +49,6 @@
 
     }
 
-    .react {
-        & > svg {
-            color: rgb(0, 255, 213);
-        }
-    }
     .comment {
         & > svg {
             color: rgb(250, 114, 114);
@@ -59,3 +60,4 @@
         }
     }
 }
+
