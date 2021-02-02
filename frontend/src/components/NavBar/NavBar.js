@@ -39,7 +39,7 @@ const NavBar = props => {
             </ul>
             <aside className={classes.profile}>
                 <p>{user.username}</p>
-                <UserImage src={`http://localhost:8000${user.picture}`} alt='user' />
+                <UserImage src={`http://192.168.43.122:8000${user.picture}`} alt='user' />
                 <Link to="/profile" className={classes.profile_btn}><FontAwesomeIcon icon={faUserCog}/></Link>
                 <Link to="/logout" className={classes.logout_btn}><FontAwesomeIcon icon={faPowerOff}/></Link>
             </aside>

@@ -14,7 +14,8 @@ const Actions = props => {
 
     useEffect(() => {
         const user_id = jwtDecode(localStorage.getItem('access_token')).user_id;
-        setReaction(props.reactions.find(reaction => reaction.user.id === user_id).reaction_type);
+        const reaction = props.reactions?.find(reaction => reaction.user.id === user_id)
+        setReaction(reaction ? reaction.reaction_type : null);
     }, [props.reactions])
 
 

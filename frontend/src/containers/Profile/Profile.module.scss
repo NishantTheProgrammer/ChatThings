@@ -5,4 +5,43 @@
     padding: 2.5rem;
     margin: 2rem auto;
     background-color: var(--container-bg);
+    border-radius: 0.5rem;
+    text-align: center;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+
+    .profile_picture {
+        width: 100%;
+        border-radius: 2rem;
+    }
+    .first_last_name {
+        font-size: 4rem;
+        margin-top: 2rem;
+    }
+    .username {
+        font-size: 3rem;
+    }
+
+    .buttons {
+        display: flex;
+        margin: 2rem 0;
+        $bg-color: #3c3c3c;
+        div {
+            background-color: $bg-color;
+            flex-basis: 100%;
+            font-size: 2.5rem;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            padding: 1rem;
+            margin:  0 .5rem;
+            border-radius: 3rem;
+            & > svg {
+                pointer-events: none;
+            }
+        }
+        div:hover {
+            background-color: lighten($bg-color, 10%);
+        }
+    }
 }

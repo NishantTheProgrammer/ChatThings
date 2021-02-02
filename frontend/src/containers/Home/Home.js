@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import Posts from '../../components/Posts/Posts';
 import classes from './Home.module.scss';
 
