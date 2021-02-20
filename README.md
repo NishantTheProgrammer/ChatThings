@@ -6,20 +6,15 @@ It will be live soon on
 git clone https://github.com/NishantTheProgrammer/ChatThings.git
 ```
 ```sh
-cd ChatThings/frontend
-npm install     #node and npm should be installed.
-npm run build
-```
-```sh
-cd ../backend
+cd ChatThings/backend
 python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
-python manage.py runserver
+python manage.py runserver 0.0.0.0:8000
 ```
 If you've any issue regarding venv click [here](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 
-Now open [http://127.0.0.1:8000/](http://127.0.0.1:8000/) in your browser.
+Now open [localhost:8000/](localhost:8000/) in your browser.
 
 # Features
 

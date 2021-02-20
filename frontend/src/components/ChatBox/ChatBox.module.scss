@@ -1,0 +1,9 @@
+.container {
+    background-color: yellow;
+    max-width: var(--container);
+    width: 100%;
+
+    @media screen and (max-width: 800px) {
+        height: 100%;
+    }
+}

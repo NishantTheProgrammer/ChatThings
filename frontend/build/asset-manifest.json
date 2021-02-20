@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.401a9c52.chunk.css",
+    "main.js": "/static/js/main.44941dca.chunk.js",
+    "main.js.map": "/static/js/main.44941dca.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d81e7871.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d81e7871.js.map",
+    "static/js/2.48c77780.chunk.js": "/static/js/2.48c77780.chunk.js",
+    "static/js/2.48c77780.chunk.js.map": "/static/js/2.48c77780.chunk.js.map",
+    "static/js/3.07c2b9ed.chunk.js": "/static/js/3.07c2b9ed.chunk.js",
+    "static/js/3.07c2b9ed.chunk.js.map": "/static/js/3.07c2b9ed.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.401a9c52.chunk.css.map": "/static/css/main.401a9c52.chunk.css.map",
+    "static/js/2.48c77780.chunk.js.LICENSE.txt": "/static/js/2.48c77780.chunk.js.LICENSE.txt",
+    "static/media/background.08d7195f.jpg": "/static/media/background.08d7195f.jpg",
+    "static/media/girl.15f75a8e.svg": "/static/media/girl.15f75a8e.svg",
+    "static/media/userFallback.950b88f7.png": "/static/media/userFallback.950b88f7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d81e7871.js",
+    "static/js/2.48c77780.chunk.js",
+    "static/css/main.401a9c52.chunk.css",
+    "static/js/main.44941dca.chunk.js"
+  ]
+}

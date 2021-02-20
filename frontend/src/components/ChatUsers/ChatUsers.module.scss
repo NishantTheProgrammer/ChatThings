@@ -1,0 +1,11 @@
+.container {
+    background-color: burlywood;
+    width: 50rem;
+    max-width: calc(var(--container)/2);
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        height: 10rem;
+        max-width: var(--container);
+    }
+}

@@ -6,15 +6,14 @@ import classes from './Posts.module.scss';
 
 
 
-const Posts = () => {
+const Posts = props => {
 
     const [postData, setPostData] = useState();
 
     const fetchPosts = () => {
         axios.get('news/post/')
         .then(res => {
-            res.data.reverse();
-            setPostData(res.data)
+            setPostData(res?.data.slice().reverse())
         })
     }
 

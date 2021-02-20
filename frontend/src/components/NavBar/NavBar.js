@@ -22,12 +22,8 @@ const NavBar = props => {
                 logout();
             }
         })
-        .catch(error => {
-            if(error.response.status === 401) {
-                console.log(props.history.push('/login'))
-            }
-        })
-    }, [])
+        .catch(error => props.history.push('/login'))
+    }, [props.history])
 
     return (
         <nav className={classes.container}>
